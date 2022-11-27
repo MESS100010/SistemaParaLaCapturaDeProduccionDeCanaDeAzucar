@@ -18,7 +18,7 @@ $row=mysqli_fetch_array($query);
         <link href="css/style.css" rel="stylesheet">
         <title>Actualizar Registros del Campo</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        
+        <link rel="icon" href="../img/icono.png">
     </head>
     <body>
                 <div class="container mt-5">

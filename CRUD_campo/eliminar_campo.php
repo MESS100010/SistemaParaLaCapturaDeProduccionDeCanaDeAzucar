@@ -5,7 +5,7 @@ $con=conectar();
 
 $id=$_GET['id'];
 
-$sql="DELETE FROM campo  WHERE idCampo ='$id'";
+$sql="DELETE FROM campo WHERE idCampo='$id'";
 $query=mysqli_query($con,$sql);
 
     if($query){

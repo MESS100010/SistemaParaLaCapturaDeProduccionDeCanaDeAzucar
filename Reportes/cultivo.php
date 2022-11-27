@@ -8,12 +8,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title> CULTIVO REGISTROS</title>
+        <title>RESPORTES POR CULTIVO</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link rel="icon" href="../img/icono.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     </head>
     <style>
     h1.b {
@@ -70,7 +70,7 @@
     }
 </style>
     <body>
-
+<br>
     <?php
     session_start();
     //echo "usuario: '$_SESSION[id]' y cargo: '$_SESSION[nivel]'";
@@ -84,14 +84,14 @@
         ?>
 
 <ul>                               
-            <li><a class="desactivar" href="../CRUD_usuario\usuario.php">Usuarios</a></li>
+            <li><a class="activar" href="../CRUD_usuario\usuario.php">Usuarios</a></li>
             <li><a class="active" href="../CRUD_empleado\empleado.php">Empleados</a></li>
             <li><a class="active" href="../CRUD_campo\campo.php">Campos</a></li>
             <li><a class="active" href="../CRUD_producto\producto.php">Productos</a></li>
             <li><a class="active" href="../CRUD_actividad\actividad.php">Actividades</a></li>
             <li><a class="active" href="../CRUD_cultivo\cultivo.php">Cultivos</a></li>
             <li><a class="active" href="../Reportes/cultivo.php">Resportes Cultivos</a></li>
-            <li><a class="desactivar" href="../Respaldo_BD/php/index.php">Respaldo base de datos</a></li>
+            <li><a class="activar" href="../Respaldo_BD/php/index.php">Respaldo base de datos</a></li>
         </ul>
 
 
@@ -114,15 +114,15 @@
 <?php
     }else{
         ?>
-<ul>                               
-            <li><a class="activar" href="../CRUD_usuario\usuario.php">Usuarios</a></li>
-            <li><a class="active" href="../CRUD_empleado\empleado.php">Empleados</a></li>
-            <li><a class="active" href="../CRUD_campo\campo.php">Campos</a></li>
-            <li><a class="active" href="../CRUD_producto\producto.php">Productos</a></li>
-            <li><a class="active" href="../CRUD_actividad\actividad.php">Actividades</a></li>
-            <li><a class="active" href="../CRUD_cultivo\cultivo.php">Cultivos</a></li>
-            <li><a class="active" href="../Reportes/cultivo.php">Resportes Cultivos</a></li>
-            <li><a class="activar" href="../Respaldo_BD/php/index.php">Respaldo base de datos</a></li>
+<ul>                                  
+            <li><a class="active" a href="../CRUD_usuario\usuario.php">Usuarios</a></li>
+            <li><a href="../CRUD_empleado\empleado.php">Empleados</a></li>
+            <li><a href="../CRUD_campo\campo.php">Campos</a></li>
+            <li><a href="../CRUD_producto\producto.php">Productos</a></li>
+            <li><a href="../CRUD_actividad\actividad.php">Actividades</a></li>
+            <li><a href="../CRUD_cultivo\cultivo.php">Cultivos</a></li>
+            <li><a href="../Reportes/cultivo.php">Resportes Cultivos</a></li>
+            <li><a  href="../Respaldo_BD/php/index.php">Respaldo base de datos</a></li></section>
         </ul>
         <?php
     }
@@ -132,7 +132,7 @@
         <table class="table" >
             <tr>
                 <th>
-                <h3>CULTIVO REGISTROS</h3>
+                <h3>REPORTES DE CULTIVOS</h3>
                 </th>
             </tr>
         </table>
@@ -142,7 +142,6 @@
         <table class="table" >
             <thead class="table-success table-striped" >
                 <tr>
-                    <th> </th>
                     <th> </th>
                     <th>ID</th>
                     <th>Fecha de Inicio</th>
@@ -157,67 +156,19 @@
                         while($row=mysqli_fetch_array($query)){
                         ?>
                         <tr>
-                            
-                            <th><a href="actualizar_cultivo.php?id=<?php echo $row['idCultivo'] ?>" class="btn btn-info"> Editar</a></th>
-                            <th><a href="eliminar_cultivo.php? id=<?php echo $row['idCultivo'] ?>" onclick="return confirm('Estás seguro que deseas eliminar el registro?');" class="btn btn-danger">Eliminar</a></th>   
+                            <th><a href="indexpdf.php? id=<?php echo $row['idCultivo'] ?>" class="btn btn-danger">PDF</a></th> 
                             <th><?php  echo $row['idCultivo']?></th>
                             <th><?php  echo $row['FechaI']?></th>
                             <th><?php  echo $row['FechaC']?></th>
                             <th><?php  echo $row['idCampo']?></th>
                             <th><?php  echo $row['Notas']?></th> 
                             <th><?php  echo $row['Progreso']?></th>
-                            
                         </tr>
                         <?php 
                         }
                         ?>
                     </tbody>
         </table>
-    </div>
-
-    <div class="container mt-5">
-        <div class="row"> 
-            <div class="col-md-3">
-                <h1>Registre cultivo</h1>
-                <form action="insertar_cultivo.php" method="POST">
-
-                    <label for="FechaI">Fecha de Inicío del Cultivo:</label>
-                    <input required type="date" class="form-control mb-3" id="FechaI" name="FechaI">
-                    
-                    <label for="FechaC">Fecha de Cosecha del Cultivo:</label>
-                    <input type="date" class="form-control mb-3" id="FechaC" name="FechaC">
-                    
-                    <label for="idCampo">Campo:</label>
-                            <select class="form-control mb-3" name="idCampo">
-                                <option value="0"> Campo </option>
-                                <?php 
-                                include("ContC.php");
-                                $conec=conectarC();
-                                $sqlC="SELECT * FROM campo";
-                                $queryC=mysqli_query($conec,$sqlC);
-                                while($row=mysqli_fetch_array($queryC)){
-                                echo '<option value="'.$row['idCampo'].'">'.$row['Dueno'].'</option>';
-                            }
-                                ?>
-                            </select>   
-
-                    <label for="Notas">Notas:</label><br>
-                    <textarea class="form-control mb-3" id="Notas" name="Notas" rows="10" cols="50">
-                    </textarea>
-
-                    <label for="Progreso">Progreso:</label>
-                    <select class="form-control mb-3" name="Progreso">
-                        <option value="Iniciado"> Iniciado </option>
-                        <option value="Sembrado"> Sembrado </option>
-                        <option value="Finalizado"> Finalizado </option>
-                    </select>
-                    
-                    <input type="submit" class="btn btn-primary">
-                    <input type="reset"  class="btn btn-primary">
-
-                </form>
-            </div>
-        </div>  
     </div>
 </body>
 </html>

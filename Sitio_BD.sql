@@ -17,6 +17,7 @@ INSERT INTO `caña`.`usuario` (`idUsuario`, `Nombre`, `Ap`, `Am`, `Nivel`, `Usua
 INSERT INTO `caña`.`usuario` (`idUsuario`, `Nombre`, `Ap`, `Am`, `Nivel`, `Usuario`, `Contrasena`) VALUES ('0', 'vane', 'zagal', 'zagal', 'administrador', 'vane', 'vane123');
 INSERT INTO `caña`.`usuario` (`idUsuario`, `Nombre`, `Ap`, `Am`, `Nivel`, `Usuario`, `Contrasena`) VALUES ('0', 'luis', 'diaz', 'lopez', 'ejidatario', 'luis', 'luis123');
 INSERT INTO `caña`.`usuario` (`idUsuario`, `Nombre`, `Ap`, `Am`, `Nivel`, `Usuario`, `Contrasena`) VALUES ('0', 'juan', 'delgado', 'perez', 'jefe de campo', 'juan', 'juan123');
+INSERT INTO `caña`.`usuario` (`idUsuario`, `Nombre`, `Ap`, `Am`, `Nivel`, `Usuario`, `Contrasena`) VALUES ('0', 'juan', 'delgado', 'perez', 'jefe de campo', 'pedro', 'pedro123');
 
 select * from usuario;
 
@@ -97,7 +98,6 @@ INSERT INTO `caña`.`campo` (`idCampo`, `Dueno`, `Edo`, `Municipio`, `Calle`, `N
 INSERT INTO `caña`.`campo` (`idCampo`, `Dueno`, `Edo`, `Municipio`, `Calle`, `NumLote`, `Colonia`, `Area`, `Estado_`) VALUES ('0', 'juan', 'Guerrero', 'acapulco', 'san pedro', '18', 'altamirano', '482.05', 'deshabilitado');
 
 select * from campo;
-
 
 CREATE TABLE IF NOT EXISTS cultivo(
 idCultivo int auto_increment primary key,

@@ -17,9 +17,17 @@ $pass = $_POST["txtpassword"];
 $query = mysqli_query($conn,"SELECT * FROM usuario WHERE Usuario = '".$nombre."' and Contrasena = '".$pass."'");
 $nr = mysqli_num_rows($query);
 
+while($fila=mysqli_fetch_array($query)){
+	$id=$fila["idUsuario"];
+	$cargo=$fila["Nivel"];
+}
+
 if($nr == 1)
 {
-	header("Location: pagina.html");
+	session_start();
+	$_SESSION['id']=$id;
+	$_SESSION['nivel']=$cargo;
+	header("Location: pagina.php");
 }
 else if ($nr == 0) 
 {

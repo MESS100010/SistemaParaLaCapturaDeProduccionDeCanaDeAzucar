@@ -52,3 +52,7 @@ input[type='submit']{
 	background-color: #a22;
 	color: #fff
 }
+
+.desactivar{
+	pointer-events: none;
+}
