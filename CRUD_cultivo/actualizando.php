@@ -17,3 +17,5 @@ $query=mysqli_query($con,$sql);
         Header("Location: cultivo.php");
     }
 ?>
+
+

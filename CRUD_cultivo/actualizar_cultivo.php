@@ -32,11 +32,11 @@ $row=mysqli_fetch_array($query);
                                     <label for="FechaC">Fecha de Cosecha del Cultivo:</label>
                                     <input type="date" class="form-control mb-3" id="FechaC" name="FechaC" value="<?php echo $row['FechaC']  ?>">
                                     
+                                    <label for="idCampo">Id del campo:</label>
                                     <input type="text" class="form-control mb-3" name="idCampo" placeholder="id del Campo" value="<?php echo $row['idCampo']  ?>">
 
                                     <label for="Notas">Notas:</label><br>
-                                    <textarea class="form-control mb-3" id="Notas" name="Notas" rows="10" cols="50" value="<?php echo $row['Notas']  ?>">
-                                    </textarea>
+                                    <input type="text" class="form-control mb-3" name="Notas" placeholder="Notas" value="<?php echo $row['Notas']  ?>">
 
                                     <label for="Progreso">Progreso:</label>
                                     <select class="form-control mb-3" name="Progreso" value="<?php echo $row['Progreso']  ?>">

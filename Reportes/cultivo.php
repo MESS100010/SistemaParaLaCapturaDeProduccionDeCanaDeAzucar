@@ -143,6 +143,7 @@
             <thead class="table-success table-striped" >
                 <tr>
                     <th> </th>
+                    <th> </th>
                     <th>ID</th>
                     <th>Fecha de Inicio</th>
                     <th>Fecha de Cosecha</th>
@@ -155,8 +156,11 @@
                         <?php
                         while($row=mysqli_fetch_array($query)){
                         ?>
+                        <form action="archivo.php" method="post">
+                            
                         <tr>
-                            <th><a href="indexpdf.php? id=<?php echo $row['idCultivo'] ?>" class="btn btn-danger">PDF</a></th> 
+                            <th><input type="hidden" name="id" value="<?php echo $row['idCultivo']?>"></th>
+                            <th><button type="submit" class="btn btn-danger">PDF</button></th> 
                             <th><?php  echo $row['idCultivo']?></th>
                             <th><?php  echo $row['FechaI']?></th>
                             <th><?php  echo $row['FechaC']?></th>
@@ -164,6 +168,7 @@
                             <th><?php  echo $row['Notas']?></th> 
                             <th><?php  echo $row['Progreso']?></th>
                         </tr>
+                        </form>
                         <?php 
                         }
                         ?>
