@@ -14,7 +14,7 @@ if (!$conn)
 $nombre = $_POST["txtusuario"];
 $pass = $_POST["txtpassword"];
 
-$query = mysqli_query($conn,"SELECT * FROM usuario WHERE Usuario = '".$nombre."' and Contraseña = '".$pass."'");
+$query = mysqli_query($conn,"SELECT * FROM usuario WHERE Usuario = '".$nombre."' and Contrasena = '".$pass."'");
 $nr = mysqli_num_rows($query);
 
 if($nr == 1)

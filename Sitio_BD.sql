@@ -2,7 +2,7 @@ drop database caña;
 create database caña;
 use caña;
 
-drop table usuario;
+
 CREATE TABLE `caña`.`usuario` (
   `idUsuario` int auto_increment primary key,
   `Nombre` VARCHAR(45) NULL,
@@ -43,7 +43,7 @@ INSERT INTO `caña`.`empleado` (`idEmpleado`, `Matricula`, `Nom`, `Paterno`, `Ma
 
 select * from empleado;
 
-drop table producto;
+
 CREATE TABLE IF NOT EXISTS producto(
 idProducto int auto_increment primary key,
 Codigo VARCHAR(45) NOT NULL,
@@ -65,7 +65,7 @@ INSERT INTO `caña`.`producto` (`idProducto`, `Codigo`, `Categoria`, `Consistenc
 
 Select * from producto;
 
-drop table actividad;
+
 CREATE TABLE IF NOT EXISTS actividad(
 idActividad int auto_increment primary key,
 Codigo VARCHAR(45) NOT NULL,
@@ -80,7 +80,7 @@ INSERT INTO `caña`.`actividad` (`idActividad`, `Codigo`, `Descr`, `Duracion`, `
 
 Select * from actividad;
 
-drop table campo;
+
 CREATE TABLE IF NOT EXISTS campo(
 idCampo  int auto_increment primary key,
 Dueno varchar(25) not null,
@@ -98,7 +98,7 @@ INSERT INTO `caña`.`campo` (`idCampo`, `Dueno`, `Edo`, `Municipio`, `Calle`, `N
 
 select * from campo;
 
-drop table cultivo;
+
 CREATE TABLE IF NOT EXISTS cultivo(
 idCultivo int auto_increment primary key,
 FechaI DATE NOT NULL,

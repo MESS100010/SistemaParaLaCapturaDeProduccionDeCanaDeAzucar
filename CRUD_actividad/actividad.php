@@ -46,7 +46,7 @@
                         <tr>
                             
                             <th><a href="actualizar_actividad.php?id=<?php echo $row['idActividad'] ?>" class="btn btn-info"> Editar</a></th>
-                            <th><a href="eliminar_actividad.php? id=<?php echo $row['idActividad'] ?>" class="btn btn-danger">Eliminar</a></th>   
+                            <th><a href="eliminar_actividad.php? id=<?php echo $row['idActividad'] ?>" class="btn btn-danger">Eliminar</a></th>  
                             <th><?php  echo $row['idActividad']?></th>
                             <th><?php  echo $row['Codigo']?></th>
                             <th><?php  echo $row['Descr']?></th>
@@ -67,11 +67,11 @@
             <div class="col-md-3">
                 <h1>Registre actividad</h1>
                 <form action="insertar_actividad.php" method="POST">
-                    <input type="text" class="form-control mb-3" name="Codigo" placeholder="Código de la Actividad">
-                    <input type="text" class="form-control mb-3" name="Descr" placeholder="Descripción de la Actividad">
-                    <input type="number" class="form-control mb-3" name="Duracion" placeholder="Duración (En días)">
-                    <input type="text" class="form-control mb-3" name="Des_Producto" placeholder="Descripción del Producto">
-                    <input type="text" class="form-control mb-3" name="Des_Empleado" placeholder="Descripción del Empleado">
+                    <input required type="text" class="form-control mb-3" name="Codigo" placeholder="Código de la Actividad">
+                    <input required type="text" class="form-control mb-3" name="Descr" placeholder="Descripción de la Actividad">
+                    <input required type="number" class="form-control mb-3" name="Duracion" placeholder="Duración (En días)">
+                    <input required type="text" class="form-control mb-3" name="Des_Producto" placeholder="Descripción del Producto">
+                    <input required type="text" class="form-control mb-3" name="Des_Empleado" placeholder="Descripción del Empleado">
                     
                     <input type="submit" class="btn btn-primary">
                     <input type="reset"  class="btn btn-primary">

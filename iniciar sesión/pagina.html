@@ -5,25 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAÑA</title>
-    <link rel="icon" href="img/icono.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <link rel="icon" href="../img/icono.png">
     
 </head>
+<style>
+    h1.b {
+        font-family: 'Lucida Handwriting', cursive;
+        color: rgb(82, 138, 43);
+        font-size: 50px;
+    }
+    
+    .button {
+    background-color: #086d0b;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    /*Sombras*/
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+    }
+    .button22:hover {
+    background-color: #51be55;
+    color: white;
+    }
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(40, 100, 75);
+    }
+    li {
+    float: left;
+    }
+
+    li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li a:hover {
+    background-color: rgb(27, 214, 27);
+    }
+</style>
 <body>
-    <h1><center>CAÑA DE AZUCAR</center></h1>
-    <h7>Sistema web para la captura de producción de caña de azucar</h7>
-    <marquee><img src="img/Principal.png"></marquee>
-    <center>
-    <button onclick="location.href='http://localhost/Sitio1.5/CRUD_usuario/usuario.php'">Menú Usuarios</button>
-    <br><br><br>
-    <button onclick="location.href='http://localhost/Sitio1.5/CRUD_empleado/empleado.php'">Menú Empleados</button>
-    <br><br><br>
-    <button onclick="location.href='http://localhost/Sitio1.5/CRUD_producto/producto.php'">Menú Productos</button>
-    <br><br><br>
-    <button onclick="location.href='http://localhost/Sitio1.5/CRUD_actividad/actividad.php'">Menú Actividades</button>
-    <br><br><br>
-    <button onclick="location.href='http://localhost/Sitio1.5/CRUD_campo/campo.php'">Menú Campos</button>
-    <br><br><br>
-    <button onclick="location.href='http://localhost/Sitio1.5/CRUD_cultivo/cultivo.php'">Menú Cultivos</button>
-</center>
+    <h1 class="b"><center>CAÑA DE AZÚCAR</center></h1>
+
+        <ul>                                  
+            <li><a class="active" a href="../CRUD_usuario\usuario.php">Usuarios</a></li>
+            <li><a href="../CRUD_empleado\empleado.php">Empleados</a></li>
+            <li><a href="../CRUD_campo\campo.php">Campos</a></li>
+            <li><a href="../CRUD_producto\producto.php">Productos</a></li>
+            <li><a href="../CRUD_actividad\actividad.php">Actividades</a></li>
+            <li><a href="../CRUD_cultivo\cultivo.php">Cultivos</a></li>
+            <li><a href="../Respaldo_BD/principal.html">Respaldo base de datos</a></li>
+        </ul>
+
+
+    
 </body>
 </html>
+
+

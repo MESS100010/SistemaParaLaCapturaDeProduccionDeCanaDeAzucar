@@ -73,7 +73,7 @@
                 <h1>Registre campo</h1>
                 <form action="insertar_campo.php" method="POST">
                     
-                    <input type="text" class="form-control mb-3" name="Dueno" placeholder="Dueño del Campo">
+                    <input required type="text" class="form-control mb-3" name="Dueno" placeholder="Dueño del Campo">
                         
                     <label for="Edo">Estado:</label>
                         <select class="form-control mb-3" name="Edo">
@@ -111,11 +111,11 @@
                             <option value="Zacatecas"> Zacatecas </option>
                     </select>
 
-                    <input type="text" class="form-control mb-3" name="Municipio" placeholder="Municipio del Campo">
-                    <input type="text" class="form-control mb-3" name="Calle" placeholder="Calle del Campo">
-                    <input type="number" class="form-control mb-3" name="NumLote" placeholder="Numero de Lote del Campo">
-                    <input type="text" class="form-control mb-3" name="Colonia" placeholder="Colonia del Campo">
-                    <input type="text" class="form-control mb-3" name="Area" placeholder="Area del Campo">
+                    <input required type="text" class="form-control mb-3" name="Municipio" placeholder="Municipio del Campo">
+                    <input required type="text" class="form-control mb-3" name="Calle" placeholder="Calle del Campo">
+                    <input required type="number" class="form-control mb-3" name="NumLote" placeholder="Numero de Lote del Campo">
+                    <input required type="text" class="form-control mb-3" name="Colonia" placeholder="Colonia del Campo">
+                    <input required type="text" class="form-control mb-3" name="Area" placeholder="Area del Campo">
                     
                     <label for="Estado_">Estado del Campo:</label>
                     <select class="form-control mb-3" name="Estado_">
