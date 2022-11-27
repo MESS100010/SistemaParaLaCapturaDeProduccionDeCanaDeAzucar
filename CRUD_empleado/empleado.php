@@ -68,6 +68,33 @@
     li a:hover {
     background-color: rgb(27, 214, 27);
     }
+    li button {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li button:hover {
+    background-color: rgb(27, 214, 27);
+    }
+    li input {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li input:hover {
+    background-color: rgb(27, 214, 27);
+    }
+    .active{
+    background-color: rgb(40, 100, 75);
+    border: 0;
+    }
+
 </style>
     <body>
     <?php
@@ -82,15 +109,23 @@
 
         ?>
 
-<ul>                               
+<ul>      
+            <li><a class="active" href="../iniciar sesión\pagina.php">Principal</a></li>                         
             <li><a class="desactivar" href="../CRUD_usuario\usuario.php">Usuarios</a></li>
             <li><a class="active" href="../CRUD_empleado\empleado.php">Empleados</a></li>
             <li><a class="active" href="../CRUD_campo\campo.php">Campos</a></li>
             <li><a class="active" href="../CRUD_producto\producto.php">Productos</a></li>
             <li><a class="active" href="../CRUD_actividad\actividad.php">Actividades</a></li>
             <li><a class="active" href="../CRUD_cultivo\cultivo.php">Cultivos</a></li>
-            <li><a class="active" href="../Reportes/cultivo.php">Resportes Cultivos</a></li>
+            <li><a class="active" href="../insumos\cultivo.php">Insumos de cultivo</a></li>
+            <form name="button" action="../Reportes/cultivo.php" method="post">
+            <input type="hidden" name="OpcionFiltro" value="NULL">
+            <input type="hidden" name="OpcionFiltroE" value="NULL">
+            <input type="hidden" name="OpcionFiltroP" value="NULL">
+            <li><button type="submit" class="active">Reportes cultivos</button></li>
+            </form>
             <li><a class="desactivar" href="../Respaldo_BD/php/index.php">Respaldo base de datos</a></li>
+            <li><a class="active" href="../iniciar sesión\login.html">Cerrar sesión</a></li> 
         </ul>
 
         <div class="col-md-8">
@@ -160,15 +195,23 @@
     }else if($_SESSION["nivel"] == "ejidatario"){
         ?>
 
-<ul>                               
+<ul>    
+            <li><a class="active" href="../iniciar sesión\pagina.php">Principal</a></li>                            
             <li><a class="activar" href="../CRUD_usuario\usuario.php">Usuarios</a></li>
             <li><a class="active" href="../CRUD_empleado\empleado.php">Empleados</a></li>
             <li><a class="active" href="../CRUD_campo\campo.php">Campos</a></li>
             <li><a class="active" href="../CRUD_producto\producto.php">Productos</a></li>
             <li><a class="active" href="../CRUD_actividad\actividad.php">Actividades</a></li>
             <li><a class="active" href="../CRUD_cultivo\cultivo.php">Cultivos</a></li>
-            <li><a class="active" href="../Reportes/cultivo.php">Resportes Cultivos</a></li>
+            <li><a class="active" href="../insumos\cultivo.php">Insumos de cultivo</a></li>
+            <form name="button" action="../Reportes/cultivo.php" method="post">
+            <input type="hidden" name="OpcionFiltro" value="NULL">
+            <input type="hidden" name="OpcionFiltroE" value="NULL">
+            <input type="hidden" name="OpcionFiltroP" value="NULL">
+            <li><button type="submit" class="active">Reportes cultivos</button></li>
+            </form>
             <li><a class="activar" href="../Respaldo_BD/php/index.php">Respaldo base de datos</a></li>
+            <li><a class="active" href="../iniciar sesión\login.html">Cerrar sesión</a></li> 
         </ul>
 
         <div class="col-md-8">
@@ -237,15 +280,23 @@
 <?php
     }else{
         ?>
-<ul>                                  
+<ul>      
+            <li><a class="active" href="../iniciar sesión\pagina.php">Principal</a></li>                             
             <li><a class="active" a href="../CRUD_usuario\usuario.php">Usuarios</a></li>
             <li><a href="../CRUD_empleado\empleado.php">Empleados</a></li>
             <li><a href="../CRUD_campo\campo.php">Campos</a></li>
             <li><a href="../CRUD_producto\producto.php">Productos</a></li>
             <li><a href="../CRUD_actividad\actividad.php">Actividades</a></li>
             <li><a href="../CRUD_cultivo\cultivo.php">Cultivos</a></li>
-            <li><a href="../Reportes/cultivo.php">Resportes Cultivos</a></li>
+            <li><a class="active" href="../insumos\cultivo.php">Insumos de cultivo</a></li>
+            <form name="button" action="../Reportes/cultivo.php" method="post">
+            <input type="hidden" name="OpcionFiltro" value="NULL">
+            <input type="hidden" name="OpcionFiltroE" value="NULL">
+            <input type="hidden" name="OpcionFiltroP" value="NULL">
+            <li><button type="submit" class="active">Reportes cultivos</button></li>
+            </form>
             <li><a  href="../Respaldo_BD/php/index.php">Respaldo base de datos</a></li></section>
+            <li><a class="active" href="../iniciar sesión\login.html">Cerrar sesión</a></li> 
         </ul>
 
         <div class="col-md-8">

@@ -23,7 +23,7 @@ VALUES ('$Matricula','$Nom','$Paterno','$Materno','$Sexo','$FecNac','$Edo','$Cit
 $query= mysqli_query($con,$sql);
 
 if($query){
-    Header("Location: empleado.php");z
+    Header("Location: empleado.php");
     
 }else {
     echo"No hay conexión establecida";

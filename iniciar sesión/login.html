@@ -96,13 +96,14 @@ input[type='submit']{
     }
 </style>
 <body>
-    <h1 class="b"><center>CAÑA DE AZUCAR</center></h1>
-    <h8><b>Sistema web para la captura de producción de caña de azucar</b></h8>
+    <h1 class="b"><center>CAÑA DE AZÚCAR</center></h1>
+    <h8><b>Sistema web para la captura de producción de caña de azúcar</b></h8>
     <marquee WIDTH="100%" BEHAVIOR="alternate"><img src="../img/portada1.jpeg" width="700" height="500"><img src="../img/portada2.jpeg" width="700" height="500"><img src="../img/portada3.jpeg" width="700" height="500"></marquee>
     <form method="post" action="login.php">
         <h1>Inicio de sesión</h1>
         <input type="text" name="txtusuario" placeholder="Usuario">
         <input type="password" name="txtpassword" placeholder="Constraseña">
+        <input type="hidden" name="OpcionFiltro" value="Todos">
         <input type="submit" value="Ingresar" name="register">
     </form>    
     <?php 

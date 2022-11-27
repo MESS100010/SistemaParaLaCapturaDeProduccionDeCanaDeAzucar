@@ -81,7 +81,6 @@ INSERT INTO `caña`.`actividad` (`idActividad`, `Codigo`, `Descr`, `Duracion`, `
 
 Select * from actividad;
 
-
 CREATE TABLE IF NOT EXISTS campo(
 idCampo  int auto_increment primary key,
 Dueno varchar(25) not null,
@@ -93,9 +92,9 @@ Colonia VARCHAR(45) NOT NULL,
 Area FLOAT NOT NULL,
 Estado_ varchar(45));
 
-INSERT INTO `caña`.`campo` (`idCampo`, `Dueno`, `Edo`, `Municipio`, `Calle`, `NumLote`, `Colonia`, `Area`, `Estado_`) VALUES ('0', 'pedro', 'Morelos', 'temixco', 'san juan', '18', 'guayaba', '508', 'ocupado');
-INSERT INTO `caña`.`campo` (`idCampo`, `Dueno`, `Edo`, `Municipio`, `Calle`, `NumLote`, `Colonia`, `Area`, `Estado_`) VALUES ('0', 'fabiola', 'Guerrero', 'taxco', 'ojeda', '45', 'minero', '842.18', 'libre');
-INSERT INTO `caña`.`campo` (`idCampo`, `Dueno`, `Edo`, `Municipio`, `Calle`, `NumLote`, `Colonia`, `Area`, `Estado_`) VALUES ('0', 'juan', 'Guerrero', 'acapulco', 'san pedro', '18', 'altamirano', '482.05', 'deshabilitado');
+INSERT INTO `caña`.`campo` (`idCampo`, `Dueno`, `Edo`, `Municipio`, `Calle`, `NumLote`, `Colonia`, `Area`, `Estado_`) VALUES ('1', 'pedro', 'Morelos', 'temixco', 'san juan', '18', 'guayaba', '508', 'ocupado');
+INSERT INTO `caña`.`campo` (`idCampo`, `Dueno`, `Edo`, `Municipio`, `Calle`, `NumLote`, `Colonia`, `Area`, `Estado_`) VALUES ('2', 'fabiola', 'Guerrero', 'taxco', 'ojeda', '45', 'minero', '842.18', 'libre');
+INSERT INTO `caña`.`campo` (`idCampo`, `Dueno`, `Edo`, `Municipio`, `Calle`, `NumLote`, `Colonia`, `Area`, `Estado_`) VALUES ('3', 'juan', 'Guerrero', 'acapulco', 'san pedro', '18', 'altamirano', '482.05', 'deshabilitado');
 
 select * from campo;
 
@@ -110,9 +109,9 @@ foreign key (idCampo) references campo(idCampo)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION);
 
-INSERT INTO `caña`.`cultivo` (`idCultivo`, `FechaI`, `FechaC`, `idCampo`, `Notas`, `Progreso`) VALUES ('0', '2022-10-19', '-', '1', 'retraso en plantación', 'iniciada');
-INSERT INTO `caña`.`cultivo` (`idCultivo`, `FechaI`, `FechaC`, `idCampo`, `Notas`, `Progreso`) VALUES ('0', '2022-10-05', '-', '2', 'parcela sin plantación', 'iniciada');
-INSERT INTO `caña`.`cultivo` (`idCultivo`, `FechaI`, `FechaC`, `idCampo`, `Notas`, `Progreso`) VALUES ('0', '2022-09-23', '-', '1', 'plaga en el cultivo', 'sembrado');
+INSERT INTO `caña`.`cultivo` (`idCultivo`, `FechaI`, `FechaC`, `idCampo`, `Notas`, `Progreso`) VALUES ('0', '2022-10-19', '-', '1', 'retraso en plantación', 'Iniciado');
+INSERT INTO `caña`.`cultivo` (`idCultivo`, `FechaI`, `FechaC`, `idCampo`, `Notas`, `Progreso`) VALUES ('0', '2022-10-05', '-', '2', 'parcela sin plantación', 'Finalizado');
+INSERT INTO `caña`.`cultivo` (`idCultivo`, `FechaI`, `FechaC`, `idCampo`, `Notas`, `Progreso`) VALUES ('0', '2022-09-23', '-', '1', 'plaga en el cultivo', 'Sembrado');
 
 select * from cultivo;
 
@@ -125,16 +124,41 @@ foreign key (idEmpleado) references empleado(idEmpleado)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION);
 
-create table Prod_Act_Cult(
-idPAC int auto_increment primary key,
+INSERT INTO `caña`.`Emp_Cult` (`idEC`, `idCultivo`, `idEmpleado`) VALUES ('1', '3', '2');
+INSERT INTO `caña`.`Emp_Cult` (`idEC`, `idCultivo`, `idEmpleado`) VALUES ('2', '3', '1');
+INSERT INTO `caña`.`Emp_Cult` (`idEC`, `idCultivo`, `idEmpleado`) VALUES ('3', '2', '2');
+
+select *from Emp_Cult;
+
+create table Prod_Cult(
+idPC int auto_increment primary key,
 idCultivo int not null,
-idEmpleado int not null,
+idProducto int not null,
+foreign key (idCultivo) references cultivo(idCultivo),
+foreign key (idProducto) references producto(idProducto)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION);
+
+INSERT INTO `caña`.`Prod_Cult` (`idPC`, `idCultivo`, `idProducto`) VALUES ('1', '3', '2');
+INSERT INTO `caña`.`Prod_Cult` (`idPC`, `idCultivo`, `idProducto`) VALUES ('2', '2', '3');
+INSERT INTO `caña`.`Prod_Cult` (`idPC`, `idCultivo`, `idProducto`) VALUES ('3', '3', '1');
+
+select *from Prod_Cult;
+
+create table Act_Cult(
+idAC int auto_increment primary key,
+idCultivo int not null,
 idActividad int not null,
 foreign key (idCultivo) references cultivo(idCultivo),
-foreign key (idEmpleado) references empleado(idEmpleado),
 foreign key (idActividad) references actividad(idActividad)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION);
+
+INSERT INTO `caña`.`Act_Cult` (`idAC`, `idCultivo`, `idActividad`) VALUES ('1', '3', '2');
+INSERT INTO `caña`.`Act_Cult` (`idAC`, `idCultivo`, `idActividad`) VALUES ('2', '2', '2');
+INSERT INTO `caña`.`Act_Cult` (`idAC`, `idCultivo`, `idActividad`) VALUES ('3', '2', '3');
+
+select *from Act_Cult;
 
 create table Usuario_Cult(
 idUC int auto_increment primary key,
@@ -144,3 +168,9 @@ foreign key (idCultivo) references cultivo(idCultivo),
 foreign key (idUsuario) references usuario(idUsuario)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION);
+
+INSERT INTO `caña`.`Usuario_Cult` (`idUC`, `idCultivo`, `idUsuario`) VALUES ('1', '1', '1');
+INSERT INTO `caña`.`Usuario_Cult` (`idUC`, `idCultivo`, `idUsuario`) VALUES ('2', '2', '5');
+INSERT INTO `caña`.`Usuario_Cult` (`idUC`, `idCultivo`, `idUsuario`) VALUES ('3', '3', '2');
+
+select *from Usuario_Cult;
