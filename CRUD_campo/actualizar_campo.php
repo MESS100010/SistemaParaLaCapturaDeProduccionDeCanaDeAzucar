@@ -4,7 +4,7 @@
 
     $id=$_GET['id'];
 
-$sql="SELECT * FROM empleado WHERE idEmpleado='$id'";
+$sql="SELECT * FROM campo WHERE idCampo='$id'";
 $query=mysqli_query($con,$sql);
 $row=mysqli_fetch_array($query);
 ?>
@@ -16,32 +16,16 @@ $row=mysqli_fetch_array($query);
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
-        <title>Actualizar Registros del Empleado</title>
+        <title>Actualizar Registros del Campo</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         
     </head>
     <body>
                 <div class="container mt-5">
                     <form action="actualizando.php" method="POST">
-                            <input type="hidden" name="idEmpleado" value="<?php echo $row['idEmpleado']  ?>">
-                             
-                            <input type="text" class="form-control mb-3" name="Matricula" placeholder="Matrícula" value="<?php echo $row['Matricula']  ?>">
-                            <input type="text" class="form-control mb-3" name="Nom" placeholder="Nombre del Empleado" value="<?php echo $row['Nom']  ?>">
-                            <input type="text" class="form-control mb-3" name="Paterno" placeholder="Apellido Paterno del Empleado" value="<?php echo $row['Paterno']  ?>">
-                            <input type="text" class="form-control mb-3" name="Materno" placeholder="Apellido Materno del Empleado" value="<?php echo $row['Materno']  ?>">
-                            
-                            <label for="Sexo">Sexo del Empleado:</label>
-                            <select class="form-control mb-3" name="Sexo" value="<?php echo $row['Sexo']  ?>">
-                                <option value="H"> Hombre </option>
-                                <option value="M"> Mujer </option>
-                                <option value="X"> Indistinto </option>
-                            </select>
-                            
-                            <label for="FecNac">Fecha de Nacimiento del Empleado:</label>
-                            <input type="date" class="form-control mb-3" name="FecNac"
-                            min="1962-01-01" 
-                            max="2004-12-31" value="<?php echo $row['FecNac']  ?>">
-
+                            <input type="hidden" name="idCampo" value="<?php echo $row['idCampo']  ?>">
+                            <input type="text" class="form-control mb-3" name="Dueno" placeholder="Dueño del Campo" value="<?php echo $row['Dueno']  ?>">
+                        
                             <label for="Edo">Estado:</label>
                                 <select class="form-control mb-3" name="Edo" value="<?php echo $row['Edo']  ?>">
                                     <option value="Aguascalientes"> Aguascalientes </option>
@@ -77,25 +61,20 @@ $row=mysqli_fetch_array($query);
                                     <option value="Yucatán"> Yucatán </option>
                                     <option value="Zacatecas"> Zacatecas </option>
                             </select>
-                            
-                            <input type="text" class="form-control mb-3" name="City" placeholder="Ciudad" value="<?php echo $row['City']  ?>">
-                            <input type="text" class="form-control mb-3" name="Calle_" placeholder="Calle" value="<?php echo $row['Calle_']  ?>">
-                            
-                            <label for="phone"> Teléfono:</label><small> (Formato: 777-370-27-36)</small> 
-                            <input type="tel" class="form-control mb-3" id="Tel" name="Tel" placeholder="777-370-27-36" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" value="<?php echo $row['Tel']  ?>">
-                            
-                            
-                            <input type="email" class="form-control mb-3" name="Correo" placeholder="Correo Electrónico" value="<?php echo $row['Correo']  ?>">
-                            <input type="text" class="form-control mb-3" name="CP" placeholder="Código Postal" value="<?php echo $row['CP']  ?>">
-                            <input type="text" class="form-control mb-3" name="Puesto" placeholder="Puesto asignado al Empleado" value="<?php echo $row['Puesto']  ?>">
-                            <input type="number" class="form-control mb-3" name="Salario" placeholder="Salario asignado al Empleado" value="<?php echo $row['Salario']  ?>">
-                                            
-                            <label for="Fec_Contrato">Fecha de Contrato del Empleado:</label>
-                            <input type="date" class="form-control mb-3" name="Fec_Contrato"
-                            min="1962-01-01" 
-                            max=2022-11-17 value="<?php echo $row['Fec_Contrato']  ?>">
 
-                            <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
+                            <input type="text" class="form-control mb-3" name="Municipio" placeholder="Municipio del Campo" value="<?php echo $row['Municipio']  ?>">
+                            <input type="text" class="form-control mb-3" name="Calle" placeholder="Calle del Campo" value="<?php echo $row['Calle']  ?>">
+                            <input type="number" class="form-control mb-3" name="NumLote" placeholder="Numero de Lote del Campo" value="<?php echo $row['NumLote']  ?>">
+                            <input type="text" class="form-control mb-3" name="Colonia" placeholder="Colonia del Campo" value="<?php echo $row['Colonia']  ?>">
+                            <input type="text" class="form-control mb-3" name="Area" placeholder="Area del Campo" value="<?php echo $row['Area']  ?>">
+                            
+                            <label for="Estado_">Estado del Campo:</label>
+                            <select class="form-control mb-3" name="Estado_" value="<?php echo $row['Estado_']  ?>">
+                                <option value="Ocupado"> Ocupado </option>
+                                <option value="Libre"> Libre </option>
+                            </select>
+                                
+                                    <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
                     </form>
                     
                 </div>

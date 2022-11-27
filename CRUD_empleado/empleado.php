@@ -87,21 +87,21 @@
                 <h1>Registre empleado</h1>
                 <form action="insertar_empleado.php" method="POST">
                     <input type="text" class="form-control mb-3" name="Matricula" placeholder="Matrícula">
-                    <input type="text" class="form-control mb-3" name="Nom" placeholder="Nombre">
-                    <input type="text" class="form-control mb-3" name="Paterno" placeholder="Apellido Paterno">
-                    <input type="text" class="form-control mb-3" name="Materno" placeholder="Apellido Materno">
+                    <input type="text" class="form-control mb-3" name="Nom" placeholder="Nombre del Empleado">
+                    <input type="text" class="form-control mb-3" name="Paterno" placeholder="Apellido Paterno del Empleado">
+                    <input type="text" class="form-control mb-3" name="Materno" placeholder="Apellido Materno del Empleado">
                     
-                    <label for="Sexo">Sexo:</label>
+                    <label for="Sexo">Sexo del Empleado:</label>
                     <select class="form-control mb-3" name="Sexo">
                         <option value="H"> Hombre </option>
                         <option value="M"> Mujer </option>
                         <option value="X"> Indistinto </option>
                     </select>
                     
-                    <label for="FecNac">Fecha de Nacimiento:</label>
+                    <label for="FecNac">Fecha de Nacimiento del Empleado:</label>
                     <input type="date" class="form-control mb-3" name="FecNac"
-                    value="2018-07-22"
-                    min="1962-01-01" max="2004-12-31">
+                    min="1962-01-01" 
+                    max="2004-12-31">
 
                     <label for="Edo">Estado:</label>
                         <select class="form-control mb-3" name="Edo">
@@ -141,17 +141,22 @@
                     
                     <input type="text" class="form-control mb-3" name="City" placeholder="Ciudad">
                     <input type="text" class="form-control mb-3" name="Calle_" placeholder="Calle">
-                    <input type="tel" class="form-control mb-3" name="Tel" placeholder="Teléfono">
+                    
+                    <label for="phone"> Teléfono:</label><small> (Formato: 777-370-27-36)</small> 
+                    <input type="tel" class="form-control mb-3" id="Tel" name="Tel" placeholder="777-370-27-36" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
+                    
+                    
                     <input type="email" class="form-control mb-3" name="Correo" placeholder="Correo Electrónico">
                     <input type="text" class="form-control mb-3" name="CP" placeholder="Código Postal">
-                    <input type="text" class="form-control mb-3" name="Puesto" placeholder="Puesto">
-                    <input type="text" class="form-control mb-3" name="Salario" placeholder="Salario">
+                    <input type="text" class="form-control mb-3" name="Puesto" placeholder="Puesto asignado al Empleado">
+                    <input type="number" class="form-control mb-3" name="Salario" placeholder="Salario asignado al Empleado">
                                     
-                    <label for="Fec_Contrato">Fecha de Contrato:</label>
+                    <label for="Fec_Contrato">Fecha de Contrato del Empleado:</label>
                     <input type="date" class="form-control mb-3" name="Fec_Contrato"
-                    value="2018-07-22"
-                    min="1962-01-01" max=2022-11-17>
+                    min="1962-01-01" 
+                    max=2022-11-17>
                     <input type="submit" class="btn btn-primary">
+                    <input type="reset"  class="btn btn-primary">
                 </form>
             </div>
         </div>  

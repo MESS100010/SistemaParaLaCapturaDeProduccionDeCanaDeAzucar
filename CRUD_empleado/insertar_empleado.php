@@ -18,8 +18,8 @@ $Puesto = $_POST['Puesto'];
 $Salario = $_POST['Salario']; 
 $Fec_Contrato = $_POST['Fec_Contrato']; 
 
-$sql = "INSERT INTO empleado(Matricula,Nom,Paterno,Materno,Sexo,FecNac,Edo,City,Calle_,Tel,Correo,CP,Puesto,Fec_Contrato) 
-VALUES ('$Matricula','$Nom','$Paterno','$Materno','$Sexo','$FecNac','$Edo','$City','$Calle_','$Tel','$Correo','$CP','$Puesto','$Fec_Contrato')";
+$sql = "INSERT INTO empleado(Matricula,Nom,Paterno,Materno,Sexo,FecNac,Edo,City,Calle_,Tel,Correo,CP,Puesto,Salario,Fec_Contrato) 
+VALUES ('$Matricula','$Nom','$Paterno','$Materno','$Sexo','$FecNac','$Edo','$City','$Calle_','$Tel','$Correo','$CP','$Puesto','$Salario','$Fec_Contrato')";
 $query= mysqli_query($con,$sql);
 
 if($query){
